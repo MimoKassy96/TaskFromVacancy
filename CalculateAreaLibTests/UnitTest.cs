@@ -10,10 +10,15 @@ namespace CalculateAreaLibTests
         public void CalculateAreaTriangleTest_Rusult_Equal_6()
         {
             // Arrange
-            var triangle = new TriangleParam() { figure = Figure.Trialnge, SideA = 3, SideB = 4, SideC = 5 };
+            var sideA = 3.0;
+            var sideB = 4.0;
+            var sideC = 5.0;
+            var triangle = new TriangleParam(sideA , sideB, sideC);
             var servise = new CalculateAreaService();
+
             // Act
-            var result = servise.CalculateAreaTriangle(triangle);
+            var result = servise.GetFigureArea(triangle);
+
             // Assert
             Assert.Equal(6 ,result);
         }
@@ -22,10 +27,13 @@ namespace CalculateAreaLibTests
         public void CalculateAreaCircleleTest_Rusult_Equal_113()
         {
             // Arrange
-            var circle = new CircleParam() { figure = Figure.Circle, Radius = 6 };
+            var radius = 6.0;
+            var circle = new CircleParam(radius);
             var servise = new CalculateAreaService();
+
             // Act
-            var result = servise.CalculateAreaCircle(circle);
+            var result = servise.GetFigureArea(circle);
+
             // Assert
             Assert.Equal(113,1 , result);
         }
@@ -34,24 +42,16 @@ namespace CalculateAreaLibTests
         public void CheckRightTriangleTest_Rusult_true()
         {
             // Arrange
-            var triangle = new TriangleParam() { figure = Figure.Trialnge, SideA = 3, SideB = 4, SideC = 5 };
-            var servise = new CalculateAreaService();
+            var sideA = 3.0;
+            var sideB = 4.0;
+            var sideC = 5.0;
+            var triangle = new TriangleParam(sideA, sideB, sideC);
+
             // Act
-            var result = servise.CheckRightTriangle(triangle);
+            var result = triangle.CheckRightTriangle(triangle);
+
             // Assert
             Assert.True(result);
-        }
-
-        [Fact]
-        public void CheckFigureAndFindAreaTest_Rusult_6()
-        {
-            // Arrange
-            var triangle = new TriangleParam() { figure = Figure.Trialnge, SideA = 3, SideB = 4, SideC = 5 };
-            var servise = new CalculateAreaService();
-            // Act
-            var result = servise.CheckFigure(triangle);
-            // Assert
-            Assert.Equal(6, result);
         }
     }
 }

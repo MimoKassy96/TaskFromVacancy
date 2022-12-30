@@ -12,6 +12,6 @@ namespace CalculateAreaLib.Models.Base
     /// </summary>
     public interface IParam
     {
-        public Figure figure { get; set; }
+        public double CalculateArea();
     }
 }

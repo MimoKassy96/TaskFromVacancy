@@ -10,7 +10,16 @@ namespace CalculateAreaLib.Models
 {
     public class CircleParam : IParam
     {
-        public double Radius { get; set; }
-        public Figure figure { get; set; }
+        private double _radius { get; set; }
+
+        public CircleParam(double radius)
+        {
+            _radius = radius;
+        }
+
+        public double CalculateArea()
+        {
+            return Math.Round(Math.PI * Math.Pow(_radius, 2), 2);
+        }
     }
 }
