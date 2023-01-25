@@ -1,6 +1,5 @@
 ﻿using CalculateAreaLib.Models;
 using CalculateAreaLib.Models.Base;
-using CalculateAreaLib.Models.Enums;
 
 namespace CalculateAreaLib.Services
 {

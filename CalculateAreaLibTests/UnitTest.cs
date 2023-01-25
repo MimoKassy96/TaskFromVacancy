@@ -1,5 +1,4 @@
 using CalculateAreaLib.Models;
-using CalculateAreaLib.Models.Enums;
 using CalculateAreaLib.Services;
 
 namespace CalculateAreaLibTests
